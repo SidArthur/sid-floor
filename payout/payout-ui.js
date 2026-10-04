@@ -1,6 +1,6 @@
 /* SidsBnb payout module UI. Usage:
- *   <link rel="stylesheet" href="/payout/payout.css"><script src="/payout/core.js"></script><script src="/payout/payout-ui.js"></script>
- *   SidPayoutUI.mount(document.getElementById("payout"), { snapshotUrl: "/payout/data/payout-snapshot.json" });  // or a live JSON endpoint
+ *   <link rel="stylesheet" href="payout/payout.css"><script src="payout/core.js"></script><script src="payout/payout-ui.js"></script>
+ *   SidPayoutUI.mount(document.getElementById("payout"), { snapshotUrl: "payout/data/payout-snapshot.json" });  // relative paths, or a live JSON endpoint
  * Vanilla JS, no dependencies, all classes prefixed "sbp-" so it can drop into another app (e.g. a React page via useEffect). */
 (function (root) {
   "use strict";
@@ -10,7 +10,7 @@
     const C = opts.core || root.SidPayoutCore; if (!C) throw new Error("SidPayoutCore (core.js) must load first");
     const IDS = ORDER.filter((id) => C.LISTINGS[id]).concat(Object.keys(C.LISTINGS).filter((id) => !ORDER.includes(id)));
     const WINDOW_NIGHTS = Object.assign({ "35662324": 30, "23542067": 30, "985426": 30, "1141445": 92 }, opts.windowNights || {});
-    const snapshotUrl = opts.snapshotUrl || "/payout/data/payout-snapshot.json", fallbackUrl = opts.fallbackUrl || "/payout/data/payout-snapshot.json";
+    const snapshotUrl = opts.snapshotUrl || "payout/data/payout-snapshot.json", fallbackUrl = opts.fallbackUrl || "payout/data/payout-snapshot.json"; // relative: works under a subpath
     const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
     const todayCT = () => new Date().toLocaleDateString("en-CA", { timeZone: "America/Chicago" });
     const parts = (d, o) => Object.fromEntries(new Intl.DateTimeFormat("en-US", o).formatToParts(d).map((p) => [p.type, p.value]));
