@@ -1,0 +1,13 @@
+{
+  "siteId": "fafa3df0-d1a6-43b7-a089-f23423a029f1",
+  "deployId": "6ac1b60990c8c033bb28b4fb",
+  "url": "https://sid-floor.netlify.app",
+  "files": {
+    "/index.html": "0ce1a9f78d421b4dd3f4c5ed1413428d68091c37",
+    "/robots.txt": "63657cbb7d7086c56b0cd4e5c6999bb683664868",
+    "/payout/core.js": "8b5e7d3dedf045cd750ab0a92a73ef539f1beba4",
+    "/payout/payout-ui.js": "1ec71af75493968cf7dc0fa517000f45b654ec3f",
+    "/payout/payout.css": "d31d9dc987181f7be17e765b990370b85ae67594",
+    "/payout/data/payout-snapshot.json": "10892e8b4ae8a3852bda592b05a459c4702703a9"
+  }
+}
